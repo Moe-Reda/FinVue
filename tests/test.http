@@ -1,0 +1,56 @@
+### Login User
+GET http://127.0.0.1:5000/api/login_user
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "password": "new_password"
+}
+
+###
+
+### Register User
+POST http://127.0.0.1:5000/api/register_user
+Content-Type: application/json
+
+{
+    "username": "new_user",
+    "email": "new_user@example.com",
+    "password": "new_password"
+}
+
+
+###
+
+### Delete User
+DELETE http://127.0.0.1:5000/api/delete_user/1
+
+###
+
+### Update User Password
+PUT http://127.0.0.1:5000/api/update_user_password
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "new_password": "updated_password"
+}
+
+###
+
+### Create Transaction
+POST http://127.0.0.1:5000/api/create_transaction
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "amount": 100.00,
+    "category": "Groceries"
+}
+
+###
+
+### Count User Transactions
+GET http://127.0.0.1:5000/api/count_user_transactions/1
+
+###

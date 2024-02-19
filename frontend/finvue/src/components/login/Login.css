@@ -1,0 +1,6 @@
+.password-login-form-group{
+    display: flex;
+    flex-direction: column; /* or row */
+    align-items: center; /* horizontally center child components */
+    fill: 100%;
+}
