@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import PieChartTransactions from '../piechart/Piechart';
+import { Pie } from 'react-chartjs-2';
 import api from '../../api/axiosConfig';
 
 const TransactionForm = ({ loggedIn, setLoggedIn }) => {
@@ -7,6 +9,7 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
   const [transactions, setTransactions] = useState([]);
+
 
    useEffect(() => {
      fetchTransactions();
@@ -45,6 +48,8 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
       console.error('Error adding transaction:', error);
     }
   };
+
+
   const handleLogout = () => {
     setLoggedIn('');
     setTransactions([]);
@@ -76,6 +81,7 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
         ))}
       </ul>
       <p className="transaction-count">Total Transactions: {transactions?.length}</p>
+      <PieChartTransactions loggedIn={loggedIn} />
       <div className='logout'>
         <button onClick={handleLogout} className="btn-secondary">Logout</button>
       </div>
