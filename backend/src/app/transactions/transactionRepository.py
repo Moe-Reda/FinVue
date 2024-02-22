@@ -34,3 +34,27 @@ class TransactionRepository:
         self.cursor.execute(user_id_query, (username,))
         user_id_result = self.cursor.fetchone()
         return user_id_result
+    
+    def transactionsPieChart(self, user_id):
+        transactions_query = "SELECT category, amount FROM transactions WHERE user_id = %s"
+        self.cursor.execute(transactions_query, (user_id,))
+        transactions = self.cursor.fetchall()
+        # transactions is in format [ ("category1", amount1), ("category2", amount2)]
+        #Get every unique category with their total amounts
+        list_cats_amounts = {}
+        for item in transactions:
+            category = item[0]
+            amount = item[1]
+            if category not in list_cats_amounts:
+                list_cats_amounts[category] = amount
+            else:
+                list_cats_amounts[category] += amount
+        # add everything in a list of tups [('category1', total1),('category2', total2)]
+        list_of_tups = []
+        for category in list_cats_amounts:
+            first = category
+            second = list_cats_amounts[category]
+            res = (first, second)
+            list_of_tups.append(res)
+        return list_of_tups
+                
