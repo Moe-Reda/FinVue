@@ -19,6 +19,19 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
     }
   };
 
+  const pieChartTransactions = async () => {
+    try {
+      const response = await api.get(`http://127.0.0.1:5000/api/piechart/${loggedIn}`);
+      // Create usestate variable and set it to the categories and totals gotten in response
+      // I will implement this below
+      
+    }  catch (error) {
+      console.error('Error making piechart', error);
+    }
+
+  }
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
