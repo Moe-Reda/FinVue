@@ -58,6 +58,7 @@ function Login({loggedIn, setLoggedIn}) {
 
     return (
         <div className="container-login">
+            <h1>FinVue</h1>
             <form onSubmit={handleSubmit} className="form-login">
                 <div className="username-login-form-group">
                     <label htmlFor="username" className='username-login-label'>Username</label>

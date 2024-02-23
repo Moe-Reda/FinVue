@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import ForgotPassword from './components/forgot_password/forgot_password';
+import ForgotPassword from './components/forgotPassword/forgotPassword';
 import TransactionForm from './components/transactionDashboard/TransactionDashboard';
 
 function App() {
