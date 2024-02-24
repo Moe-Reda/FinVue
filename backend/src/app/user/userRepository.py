@@ -3,8 +3,8 @@ import pymysql
 
 
 class UserRepository:
-    mysql_host = '100.113.48.195'
-    mysql_user = 'projectfinance'
+    mysql_host = '184.148.137.52'
+    mysql_user = 'ProjectFinance'
     mysql_password = 'Finance@2003'
     mysql_db = 'finvue'
 
