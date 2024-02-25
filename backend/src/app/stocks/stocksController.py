@@ -6,16 +6,16 @@ stocks_blueprint = Blueprint('stocks', __name__)
 stocks_use_case = Stocks()
 
 
-@stocks_blueprint.route('/get_time_series/<string:stock>', methods=['GET'])
-def getStockTimeSeries(stock):
-    result = stocks_use_case.getStockTimeSeries(stock)
+@stocks_blueprint.route('/get_time_series/<string:stock>/<int:days>', methods=['GET'])
+def getStockTimeSeries(stock, days):
+    result = stocks_use_case.getStockTimeSeries(stock, days)
     return jsonify(timeSeries=result[0]), result[1]
 
 
-@stocks_blueprint.route('/get_portfolio_time_series/<string:username>',
+@stocks_blueprint.route('/get_portfolio_time_series/<string:username>/<int:days>',
                         methods=['GET'])
-def getPortfolioTimeSeries(username):
-    result = stocks_use_case.getPortfolioTimeSeries(username)
+def getPortfolioTimeSeries(username, days):
+    result = stocks_use_case.getPortfolioTimeSeries(username, days)
     return jsonify(timeSeries=result[0]), result[1]
 
 

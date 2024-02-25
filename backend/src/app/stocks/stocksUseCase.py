@@ -35,10 +35,10 @@ class Stocks:
         except Exception as e:
             return {'error': str(e)}, 500
 
-    def getPortfolioTimeSeries(self, username):
+    def getPortfolioTimeSeries(self, username, days):
         try:
             stocks = self.fetchAllStocks(username)[0]
-            stocks_data = [self.getStockTimeSeries(stock)[0] for stock in stocks]
+            stocks_data = [self.getStockTimeSeries(stock, days)[0] for stock in stocks]
             stocks_quantity = [self.getStockQuantity(username, stock)[0][0] for stock in stocks]
             aggregate_prices = {}
             for i, stock_data in enumerate(stocks_data):
@@ -53,7 +53,7 @@ class Stocks:
                 portfolio_data.append(day_data)
             return portfolio_data, 200
         except Exception as e:
-            return {"error": "Error fetching Stock time series: " + str(stocks_data)}, 500
+            return {"error": "Error fetching Stock time series: " + str(e)}, 500
 
     def fetchAllStocks(self, username):
         try:

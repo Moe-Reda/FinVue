@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axiosConfig';
-import "./TransactionDashboard.css"
 
 const TransactionForm = ({ loggedIn, setLoggedIn }) => {
   const [amount, setAmount] = useState('');
