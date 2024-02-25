@@ -1,33 +1,30 @@
-.container-login {
+.container-register {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
 }
 
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-login {
+.form-register {
     display: flex;
     flex-direction: column;
 }
 
-.username-login-form-group,
-.password-login-form-group {
+.username-register-form-group,
+.email-register-form-group,
+.password-register-form-group {
     margin-bottom: 20px;
 }
 
-.username-login-label,
-.password-login-label {
+.username-register-label,
+.email-register-label,
+.password-register-label {
     font-size: 1rem;
     margin-bottom: 5px;
 }
 
-.username-login-input,
-.password-login-input {
+.username-register-input,
+.email-register-input,
+.password-register-input {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -35,11 +32,11 @@ h1 {
     border-radius: 5px;
 }
 
-.password-container {
+.password-register-container {
     position: relative;
 }
 
-.password-eye-icon {
+.password-eye-icon-register {
     position: absolute;
     top: 70%;
     right: 10px;
@@ -47,8 +44,8 @@ h1 {
     cursor: pointer;
 }
 
-.submit-login-button,
-.register-login-button {
+.submit-register-button,
+.login-register-button {
     padding: 10px;
     font-size: 1rem;
     background-color: #007bff;
@@ -60,21 +57,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.submit-login-button:hover,
-.register-login-button:hover {
+.submit-register-button:hover,
+.login-register-button:hover {
     background-color: #0056b3;
-}
-
-.forgot-password-login-container {
-    text-align: center;
-}
-
-.forgot-password-login-link {
-    font-size: 0.8rem;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.forgot-password-login-link:hover {
-    text-decoration: underline;
 }
