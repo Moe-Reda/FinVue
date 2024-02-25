@@ -7,6 +7,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import ForgotPassword from './components/forgot_password/forgot_password';
 import TransactionForm from './components/transactionDashboard/TransactionDashboard';
+import BudgetPage from './components/budgetPage/BudgetPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState('');
@@ -23,6 +24,7 @@ function App() {
           <Route path='/register' element={<Register loggedIn={loggedIn} setLoggedIn={changeLoggedIn}/>}></Route>
           <Route path='/forgot-password' element={<ForgotPassword/>}></Route>
           <Route path='/transaction-dashboard' element={<TransactionForm loggedIn={loggedIn} setLoggedIn={changeLoggedIn}/>}></Route>
+          <Route path='/budget' element={<BudgetPage loggedIn={loggedIn}/>}></Route>
         </Route>
       </Routes>
     </div>
