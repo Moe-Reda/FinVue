@@ -5,6 +5,7 @@ import {eyeOff} from 'react-icons-kit/feather/eyeOff';
 import {eye} from 'react-icons-kit/feather/eye';
 import api from '../../api/axiosConfig';
 import { useNavigate } from "react-router-dom";
+import "./Register.css"
 
 function Register({loggedIn, setLoggedIn}) {
       
@@ -68,15 +69,15 @@ function Register({loggedIn, setLoggedIn}) {
           <form onSubmit={handleSubmit} className="form-register">
               <div className="username-register-form-group">
                 <label htmlFor="username" className='username-register-label'>Username</label>
-                <input type="text" id="username" value={username} onChange={handleUsernameChange} className='username-register-input'/>
+                <input type="text" id="username" value={username} onChange={handleUsernameChange} className='username-register-input' placeholder="Username"/>
               </div>
               <div className="email-register-form-group">
                 <label htmlFor="email" className='email-register-label'>Email</label>
-                <input type="email" id="email" value={email} onChange={handleEmailChange} className='email-register-input'/>
+                <input type="email" id="email" value={email} onChange={handleEmailChange} className='email-register-input' placeholder="Email"/>
               </div>
               <div className="password-register-form-group">
-                <div class="password-container">
-                  <label htmlFor="password" className='password-login-label'>Password</label>
+                <div className="password-register-container">
+                  <label htmlFor="password" className='password-register-label'>Password</label>
                   <input
                       type={type}
                       name="password"
@@ -85,9 +86,9 @@ function Register({loggedIn, setLoggedIn}) {
                       value={password}
                       onChange={handlePasswordChange}
                       autoComplete="current-password"
-                      className='password-login-input'
+                      className='password-register-input'
                   />
-                  <span class="password-eye-icon" onClick={handleToggle}>
+                  <span class="password-eye-icon-register" onClick={handleToggle}>
                       <Icon class="absolute mr-10" icon={icon} size={25}/>
                   </span>
                 </div>
