@@ -1,10 +1,8 @@
 from .transactionRepository import TransactionRepository
 
-
-class FetchTransactions:
-    transactionRepository = TransactionRepository()
-
-    def fetchTransactions(self, username):
+class TransactionsPieChart:
+     transactionRepository = TransactionRepository()
+     def transactionsPieChart(self, username):
         try:
             user_id_result = self.transactionRepository.getUserId(username)
             if user_id_result is None:
@@ -15,15 +13,15 @@ class FetchTransactions:
             return {'error': str(e)}, 500
 
         try:
-            transactions = self.transactionRepository.fetchTransactions(user_id)
+            cats_and_totals = self.transactionRepository.transactionsPieChart(user_id)
 
-            if not transactions:
+            if not cats_and_totals:
                 return {'message': 'No transactions found for the user'}, 404
 
-            transactions_list = [{'category': category, 'amount': amount} for
-                                 category, amount in transactions]
+            categories_list = [{'category': category, 'total': total} for
+                                 category, total in cats_and_totals]
 
-            return transactions_list, 200
+            return categories_list, 200
         except Exception as e:
             raise e
             return {'error': str(e)}, 500
