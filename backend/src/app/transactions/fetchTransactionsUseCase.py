@@ -11,6 +11,7 @@ class FetchTransactions:
                 return {'message': 'Username not found'}, 404
             user_id = user_id_result[0]
         except Exception as e:
+            raise e
             return {'error': str(e)}, 500
 
         try:
@@ -24,4 +25,5 @@ class FetchTransactions:
 
             return transactions_list, 200
         except Exception as e:
+            raise e
             return {'error': str(e)}, 500

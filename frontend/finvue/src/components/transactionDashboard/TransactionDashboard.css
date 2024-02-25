@@ -1,0 +1,125 @@
+.transaction-form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .transaction-form h2 {
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #007ba7;
+  }
+  
+  .btn-secondary {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d32f2f;
+  }
+  
+  .transaction-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .transaction-item {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    color: #333;
+  }
+  
+  .transaction-count {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Pie Chart container */
+  .pie-chart-container {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 400px;
+  }
+
+  .category-select {
+    width: 100%; /* Ensures the select fills the container */
+    padding: 0.5rem; /* Matches the padding of the input fields */
+    font-size: 1rem; /* Matches the font size of the input fields */
+    border: 1px solid #ddd; /* Light border similar to input fields */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    color: #333; /* Text color */
+    appearance: none; /* Removes the default styling provided by the browser */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048"><path fill="%23333" d="M2048 384v128H0V384h2048zm0 640v128H0v-128h2048zM0 1664h2048v128H0v-128z"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%; /* Position the dropdown arrow */
+    background-size: 0.65em auto; /* Size of the dropdown arrow */
+  }
+  
+  /* Focus style for accessibility */
+  .category-select:focus {
+    border-color: #008cba; /* Highlight color when focused */
+    outline: none; /* Remove default focus outline */
+  }
+  
+  /* You might want to add custom styles for when the select is disabled or has an error */
+  .category-select:disabled {
+    background-color: #f9f9f9; /* Lighter background for disabled state */
+    color: #aaa; /* Dim text for disabled state */
+  }
+  
+  

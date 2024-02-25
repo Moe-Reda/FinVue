@@ -9,8 +9,9 @@ class TransactionsPieChart:
                 return {'message': 'Username not found'}, 404
             user_id = user_id_result[0]
         except Exception as e:
+            raise e
             return {'error': str(e)}, 500
-        
+
         try:
             cats_and_totals = self.transactionRepository.transactionsPieChart(user_id)
 
@@ -22,4 +23,5 @@ class TransactionsPieChart:
 
             return categories_list, 200
         except Exception as e:
+            raise e
             return {'error': str(e)}, 500
