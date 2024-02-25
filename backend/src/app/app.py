@@ -13,5 +13,6 @@ app.register_blueprint(transactions_blueprint, url_prefix='/api')
 app.register_blueprint(budgets_blueprint, url_prefix='/api')
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)
