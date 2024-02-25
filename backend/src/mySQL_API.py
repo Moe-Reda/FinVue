@@ -16,7 +16,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 # MySQL Configuration
 # TODO: Change these values
-mysql_host = '100.113.48.195'
+mysql_host = '38.20.131.126'
 mysql_user = 'projectfinance'
 mysql_password = 'Finance@2003'
 mysql_db = 'finvue'
