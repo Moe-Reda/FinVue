@@ -44,6 +44,7 @@ const BudgetTable = ({ loggedIn, budgetData, getBudgetLists }) => {
       const response = await api.post('http://127.0.0.1:5000/api/create_budget', budget);
       console.log('Budget created:', response.data);
       setAmount(''); // Reset the amount input after successful creation
+      setSelectedCategory(categories[0]);
       // You might want to update the local state to reflect the new budget item or refetch the budget data
       getBudgetLists();
     } catch (error) {
