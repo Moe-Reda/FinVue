@@ -29,13 +29,13 @@ const UserStockDashboard = ({ loggedIn }) => { // Using loggedIn instead of user
         fetchUserStocks();
     }, [loggedIn]);
 
-    const fetchStockData = async (symbol) => {
+    const fetchStockData = async (symbol, time) => {
         try {
             let response;
             if (symbol === 'Portfolio') {
-                response = await api.get(`http://127.0.0.1:5000/api/get_portfolio_time_series/${loggedIn}/${timeRange}`);
+                response = await api.get(`http://127.0.0.1:5000/api/get_portfolio_time_series/${loggedIn}/${time}`);
             } else {
-                response = await api.get(`http://127.0.0.1:5000/api/get_time_series/${symbol}/${timeRange}`);
+                response = await api.get(`http://127.0.0.1:5000/api/get_time_series/${symbol}/${time}`);
             }
             setStockData(response.data.timeSeries);
         } catch (error) {
@@ -46,13 +46,13 @@ const UserStockDashboard = ({ loggedIn }) => { // Using loggedIn instead of user
     const handleStockSelect = (event) => {
         const selectedSymbol = event.target.value;
         setSelectedStock(selectedSymbol);
-        fetchStockData(selectedSymbol);
+        fetchStockData(selectedSymbol, timeRange);
     };
 
     const handleTimeRangeSelect = (event) => {
         const selectedTimeRange = event.target.value;
         setTimeRange(selectedTimeRange);
-        fetchStockData(selectedStock);
+        fetchStockData(selectedStock, selectedTimeRange);
     };
 
     const openModal = () => {
@@ -80,6 +80,11 @@ const UserStockDashboard = ({ loggedIn }) => { // Using loggedIn instead of user
                 quantity: newStock.quantity
             });
             setModalOpen(false);
+            setNewStock({
+                tick: '',
+                order: '',
+                quantity: ''
+            });
             fetchUserStocks();
         } catch (error) {
             console.error('Error adding stock:', error);
@@ -92,7 +97,7 @@ const UserStockDashboard = ({ loggedIn }) => { // Using loggedIn instead of user
             <h2>Portfolio Dashboard</h2>
             <div className="time-range-dropdown">
                 <label htmlFor="timeRange">Select Time Range:</label>
-                <select id="timeRange" value={timeRange} onChange={handleTimeRangeSelect}>
+                <select id="timeRange" onChange={handleTimeRangeSelect}>
                     <option value="7">1 Week</option>
                     <option value="30">1 Month</option>
                     <option value="120">4 Months</option>

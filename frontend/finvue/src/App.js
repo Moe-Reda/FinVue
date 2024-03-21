@@ -10,6 +10,7 @@ import TransactionForm from './components/transactionDashboard/TransactionDashbo
 import UserStockDashboard from './components/userStockDashboard/UserStockDashboard';
 import BudgetPage from './components/budgetPage/BudgetPage';
 import SavingsPage from './components/savingsPage/savingsPage';
+import UserCryptoDashboard from './components/userCryptoDashboard/UserCryptoDashboard';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState('');
@@ -27,6 +28,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPassword/>}></Route>
           <Route path='/transaction-dashboard' element={<TransactionForm loggedIn={loggedIn} setLoggedIn={changeLoggedIn}/>}></Route>
           <Route path='/stocks' element={<UserStockDashboard loggedIn={loggedIn}/>}></Route>
+          <Route path='/cryptos' element={<UserCryptoDashboard loggedIn={loggedIn}/>}></Route>
           <Route path='/budget' element={<BudgetPage loggedIn={loggedIn}/>}></Route>
           <Route path='/savings' element={<SavingsPage/>}></Route>
         </Route>

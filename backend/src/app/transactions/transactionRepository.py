@@ -1,4 +1,6 @@
 # from database import Database
+from datetime import datetime
+
 import pymysql
 
 
@@ -50,8 +52,9 @@ class TransactionRepository:
                              password=self.mysql_password,
                              db=self.mysql_db)
         self.cursor = self.db.cursor()
-        transactions_query = "SELECT category, amount FROM transactions WHERE user_id = %s"
-        self.cursor.execute(transactions_query, (user_id,))
+        transactions_query = "SELECT category, amount FROM transactions WHERE user_id = %s AND created_at > %s"
+        date = datetime.now().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        self.cursor.execute(transactions_query, (user_id, date))
         transactions = self.cursor.fetchall()
         # transactions is in format [ ("category1", amount1), ("category2", amount2)]
         #Get every unique category with their total amounts
