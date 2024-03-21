@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 import requests
 from .stocksRepository import StocksRepository
 import yfinance as yf
@@ -9,7 +11,11 @@ class Stocks:
     def getStockTimeSeries(self, stock, days=7):
         try:
             # Fetch historical stock data
-            stock_data = yf.download(stock, period=f"{days}d")
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=days)
+
+            # Download stock data for the last n days
+            stock_data = yf.download(stock, start=start_date, end=end_date)
 
             # Extract closing prices
             closing_prices = [{"day": str(day.date()), "price": price} for day, price in zip(stock_data.index, stock_data["Close"])]
