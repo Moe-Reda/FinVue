@@ -11,6 +11,7 @@ import UserStockDashboard from './components/userStockDashboard/UserStockDashboa
 import BudgetPage from './components/budgetPage/BudgetPage';
 import SavingsPage from './components/savingsPage/savingsPage';
 import UserCryptoDashboard from './components/userCryptoDashboard/UserCryptoDashboard';
+import CurrencyPage from './components/currencyPage/currencyPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState('');
@@ -31,6 +32,7 @@ function App() {
           <Route path='/cryptos' element={<UserCryptoDashboard loggedIn={loggedIn}/>}></Route>
           <Route path='/budget' element={<BudgetPage loggedIn={loggedIn}/>}></Route>
           <Route path='/savings' element={<SavingsPage/>}></Route>
+          <Route path='/currency' element={<CurrencyPage/>}></Route>
         </Route>
       </Routes>
     </div>
