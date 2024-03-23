@@ -78,7 +78,7 @@ const CurrencyPage = () => {
       <button className="exchange-button" onClick={handleExchange}>Exchange</button>
       {result && (
         <div className="result">
-          <p>Converted Amount: {result.converted_amount}</p>
+          <p>Converted Amount: {result}</p>
         </div>
       )}
     </div>
