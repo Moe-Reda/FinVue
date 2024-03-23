@@ -2,6 +2,8 @@ from flask import Blueprint, Flask
 from flask_cors import CORS, cross_origin
 
 from FinVue.backend.src.app.cryptos.cryptosController import cryptos_blueprint
+from FinVue.backend.src.app.currency.currencyController import \
+    currency_blueprint
 from stocks.stocksController import stocks_blueprint
 from user.userController import user_blueprint
 from transactions.transactionsController import transactions_blueprint
@@ -18,6 +20,7 @@ app.register_blueprint(stocks_blueprint, url_prefix='/api')
 app.register_blueprint(budgets_blueprint, url_prefix='/api')
 app.register_blueprint(savings_blueprint, url_prefix='/api')
 app.register_blueprint(cryptos_blueprint, url_prefix='/api')
+app.register_blueprint(currency_blueprint, url_prefix='/api')
 
 
 
