@@ -10,6 +10,8 @@ from transactions.transactionsController import transactions_blueprint
 from budget.budgetController import budgets_blueprint
 from savings.savingsController import savings_blueprint
 from bills.billsController import bills_blueprint
+from news.newsController import news_blueprint
+
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
@@ -23,6 +25,7 @@ app.register_blueprint(savings_blueprint, url_prefix='/api')
 app.register_blueprint(cryptos_blueprint, url_prefix='/api')
 app.register_blueprint(currency_blueprint, url_prefix='/api')
 app.register_blueprint(bills_blueprint, url_prefix='/api')
+app.register_blueprint(news_blueprint, url_prefix='/api')
 
 
 if __name__ == '__main__':
