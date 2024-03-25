@@ -17,6 +17,7 @@ const Navbar = () => {
         <li><Link to="/budget">Budget</Link></li>
         <li><Link to="/savings">Savings</Link></li>
         <li><Link to="/currency">Currency Exchange</Link></li>
+        <li><Link to="/bills">Bill Calendar</Link></li>
         <li><Link to="/">Logout</Link></li>
       </ul>
     </nav>
