@@ -13,6 +13,7 @@ import SavingsPage from './components/savingsPage/savingsPage';
 import UserCryptoDashboard from './components/userCryptoDashboard/UserCryptoDashboard';
 import CurrencyPage from './components/currencyPage/currencyPage';
 import BillsPage from './components/bills/BillsPage'
+import NewsPage from './components/newsPage/newsPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState('');
@@ -35,6 +36,7 @@ function App() {
           <Route path='/budget' element={<BudgetPage loggedIn={loggedIn}/>}></Route>
           <Route path='/savings' element={<SavingsPage/>}></Route>
           <Route path='/currency' element={<CurrencyPage/>}></Route>
+          <Route path='/news' element={<NewsPage/>}></Route>
         </Route>
       </Routes>
     </div>

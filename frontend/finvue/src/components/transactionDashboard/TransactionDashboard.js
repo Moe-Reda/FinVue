@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PieChartTransactions from '../piechart/PieChartTransactions';
 import api from '../../api/axiosConfig';
 import './TransactionDashboard.css'
+import Spendings from '../spendings/spendings';
 
 const TransactionForm = ({ loggedIn, setLoggedIn }) => {
   const categories = [
@@ -127,6 +128,7 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
 
 
   return (
+    <div>
     <div className="transaction-form">
       <h2>Add Transaction</h2>
       <form onSubmit={handleSubmit}>
@@ -159,9 +161,8 @@ const TransactionForm = ({ loggedIn, setLoggedIn }) => {
     </ul>
       <p className="transaction-count">Total Transactions: {transactions?.length}</p>
       <PieChartTransactions loggedIn={loggedIn} chartData={chartData}/>
-      <div className='logout'>
-        <button onClick={handleLogout} className="btn-secondary">Logout</button>
-      </div>
+    </div>
+    <Spendings loggedIn={loggedIn}/>
     </div>
    
   );
