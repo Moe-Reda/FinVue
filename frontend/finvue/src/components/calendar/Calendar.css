@@ -1,0 +1,116 @@
+.rbc-calendar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 100vh; 
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .rbc-toolbar {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .rbc-btn-group button {
+    color: #333;
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .rbc-btn-group button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .rbc-btn-group a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin: 0;
+  }
+  
+  .rbc-btn-group a:hover {
+    background-color: #e6e6e6;
+  }
+  
+
+  .rbc-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .rbc-day-bg {
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+  }
+  
+ 
+  .rbc-selected-cell {
+    background-color: #dbefff;
+  }
+  
+  
+  .rbc-event {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: none;
+  }
+  
+  
+  .rbc-off-range-bg {
+    background-color: #f7f7f7;
+  }
+  
+  
+  .rbc-month-view {
+    height: auto !important;
+  }
+  
+ 
+  .rbc-agenda-view table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .rbc-agenda-view table .rbc-agenda-time-cell,
+  .rbc-agenda-view table .rbc-agenda-event-cell {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .rbc-toolbar .rbc-btn-group button {
+    color: var(--primary-color) !important;
+    background-color: var(--secondary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+  }
+  
+  .rbc-toolbar .rbc-btn-group button:hover {
+    background-color: var(--hover-color) !important;
+    border-color: darken(var(--primary-color), 10%) !important;
+  }
+  
+
+  .rbc-toolbar .rbc-btn-group .rbc-active {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+  }
+  
+
+  :root {
+    --primary-color: #007bff; 
+    --secondary-color: #fff;
+    --hover-color: #e6e6e6;
+    --active-color: #dbefff;
+    --today-color: #eaf6ff; 
+    --event-color: #007bff;
+  }
